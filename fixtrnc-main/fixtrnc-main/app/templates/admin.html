@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fixtrnc Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen p-6 sm:p-10">
+    <main class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Technician applications</h1>
+        {% if error %}<p class="text-red-700 mb-4">{{ error }}</p>{% endif %}
+        {% if not logged_in %}
+            <form method="post" class="bg-white p-6 rounded-xl shadow-sm max-w-md space-y-4">
+                <input type="hidden" name="action" value="login">
+                <label class="block text-sm font-semibold">Admin password</label>
+                <input type="password" name="password" required class="w-full border rounded-lg p-3">
+                <button class="bg-[#9B2F22] text-white rounded-lg px-5 py-3 font-semibold">Sign in</button>
+            </form>
+        {% else %}
+            <form method="post" action="{{ url_for('admin_logout') }}" class="mb-6"><button class="text-sm underline">Sign out</button></form>
+            {% if pending %}
+                <div class="space-y-4">
+                    {% for pro in pending %}
+                        <article class="bg-white p-6 rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <h2 class="font-bold text-lg">{{ pro.name }}</h2>
+                                <p class="text-sm text-gray-600">{{ pro.category }} · {{ pro.region }} · {{ pro.phone }}</p>
+                                <p class="text-sm mt-2">{{ pro.description }}</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <form method="post" action="{{ url_for('approve', application_id=pro.application_id) }}"><button class="bg-green-700 text-white rounded-lg px-5 py-3 font-semibold">Approve</button></form>
+                                <form method="post" action="{{ url_for('decline', application_id=pro.application_id) }}"><button class="bg-red-700 text-white rounded-lg px-5 py-3 font-semibold">Decline</button></form>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="bg-white p-6 rounded-xl">There are no applications waiting for review.</p>
+            {% endif %}
+        {% endif %}
+    </main>
+</body>
+</html>

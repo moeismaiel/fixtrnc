@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIXTRNC — Instant Repair & Home Services</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .font-impact {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.02em;
+        }
+        .font-sans-custom {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F7F2] text-[#1E1E1E] font-sans-custom antialiased selection:bg-[#B84032] selection:text-white">
+
+    <nav class="bg-[#9B2F22] text-white px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-md">
+        <div class="text-2xl font-extrabold tracking-wider font-impact">FIXTRNC.</div>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-white/80">
+            <a href="#" class="text-white hover:opacity-100 transition">Home</a>
+            <a href="#technicians" class="hover:text-white transition">Technicians</a>
+            <a href="#about" class="hover:text-white transition">About Us</a>
+            <a href="#process" class="hover:text-white transition">Process</a>
+            <a href="#apply" class="hover:text-white transition">Join Us</a>
+            <a href="#contact" class="hover:text-white transition">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="p-2 hover:bg-white/10 rounded-full transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </button>
+            <a href="#technician-cards" class="border border-white/40 hover:bg-white hover:text-[#9B2F22] text-sm font-semibold px-5 py-2 rounded-full transition duration-200">Call Now</a>
+        </div>
+    </nav>
+
+    <section class="relative bg-[#9B2F22] text-white overflow-hidden min-h-[420px] sm:min-h-[500px] pt-12 pb-24 px-4 sm:px-8">
+
+        <div class="absolute inset-0 flex justify-center pointer-events-none opacity-40 z-0">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&w=1600&q=80" alt="Fixtrnc Lead Technician Background" class="w-full h-full object-cover object-center mask-image-gradient">
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-start gap-6 relative z-10">
+            <div class="space-y-2">
+                <h2 class="text-sm uppercase tracking-widest font-semibold text-white/80">Modern Care for a</h2>
+                <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight">CONFIDENT SMILE</h3>
+            </div>
+
+            <div class="hidden md:block"></div>
+
+            <div class="text-xs sm:text-sm text-white/80 leading-relaxed max-w-sm md:ml-auto">
+                We provide high-quality repair services using modern diagnostic tools and a customer-first approach. From routine maintenance to complex troubleshooting, your home equipment is in safe hands.
+            </div>
+        </div>
+
+        <div class="w-full text-center mt-12 sm:mt-8 select-none pointer-events-none relative z-10">
+            <h1 class="font-impact text-[14vw] leading-none text-white opacity-95 tracking-tight uppercase">
+                INSTANT REPAIR
+            </h1>
+        </div>
+    </section>
+
+    <section id="technicians" class="py-20 px-3 sm:px-5 w-full">
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+            <span class="bg-[#EAE8DD] text-[#555] text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">We Fix With Care</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#111] tracking-tight">Bringing Life Back to Your Essential Devices</h2>
+            <p class="text-gray-600 text-sm leading-relaxed">We provide fast, reliable, and affordable repair services for your home appliances. Our skilled technicians ensure every issue is fixed with care and precision for long-lasting results.</p>
+        </div>
+
+        <div class="relative">
+        <button type="button" onclick="scrollTechnicians(-1)" aria-label="Scroll technicians left" class="absolute left-2 top-1/2 z-10 -translate-y-1/2 h-12 w-12 inline-flex items-center justify-center rounded-full bg-black/70 text-white shadow-lg hover:bg-black/90 focus:outline-none focus:ring-2 focus:ring-white">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" onclick="scrollTechnicians(1)" aria-label="Scroll technicians right" class="absolute right-2 top-1/2 z-10 -translate-y-1/2 h-12 w-12 inline-flex items-center justify-center rounded-full bg-black/70 text-white shadow-lg hover:bg-black/90 focus:outline-none focus:ring-2 focus:ring-white">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        <div id="technician-cards" class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 scroll-mt-24" style="scrollbar-width: none;">
+            {% if professionals %}
+                {% for pro in professionals %}
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col flex-none w-[85%] sm:w-[min(45vw,388px)] lg:w-[388px] snap-start">
+                        <div class="h-72 overflow-hidden bg-gray-200">
+                                <img src="{{ url_for('static', filename='uploads/profiles/' ~ pro.profile_image) if pro.profile_image else 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80' }}" alt="{{ pro.name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6 text-center space-y-1 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">{{ pro.name }}</h3>
+                                <p class="text-sm text-[#9B2F22] font-semibold">📍 {{ pro.region }} &nbsp;|&nbsp; 🔧 {{ pro.category }}</p>
+                                <p class="text-xs text-gray-500 mt-2">{{ pro.description }}</p>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-gray-100 flex gap-2">
+                                <a href="tel:{{ pro.phone }}" class="flex-1 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-lg transition">📞 Call</a>
+                                <a href="{{ pro.whatsapp_link }}" target="_blank" class="flex-1 py-2 bg-[#25D366] hover:bg-[#128C7E] text-white text-xs font-bold rounded-lg transition">💬 WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="w-full text-center py-10 text-gray-500">
+                    No professionals found matching your filters.
+                </div>
+            {% endif %}
+        </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-[#5C4033] text-white relative overflow-hidden scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-xs uppercase tracking-widest text-amber-200 font-semibold">Reliable Solutions for Every Device You Depend On</span>
+                <h2 class="font-impact text-7xl sm:text-9xl tracking-tight leading-none text-white/90">FO.</h2>
+            </div>
+
+            <div class="bg-black/30 backdrop-blur-md p-8 rounded-2xl border border-white/10 space-y-4 max-w-md ml-auto">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs text-amber-200 uppercase font-semibold">Certified & Experienced Technicians</span>
+                    <a href="#contact" class="text-xs border border-white/40 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">Book a Service</a>
+                </div>
+                <p class="text-3xl font-extrabold">3050+ <span class="text-sm font-normal text-gray-300">Devices repaired</span></p>
+                <p class="text-xs text-gray-400 font-mono">Sr-4365346234</p>
+            </div>
+        </div>
+
+        <div class="bg-[#7A2E22] py-8 border-t border-white/10">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <p class="text-4xl font-extrabold">3k+</p>
+                    <p class="text-xs text-white/70 mt-1 uppercase tracking-wider">Devices Repaired</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-extrabold">5k+</p>
+                    <p class="text-xs text-white/70 mt-1 uppercase tracking-wider">Happy Customers</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-extrabold">98%</p>
+                    <p class="text-xs text-white/70 mt-1 uppercase tracking-wider">Customer Satisfaction</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-extrabold">5+</p>
+                    <p class="text-xs text-white/70 mt-1 uppercase tracking-wider">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Accordion -->
+            <div class="space-y-6">
+                <span class="bg-[#EAE8DD] text-[#555] text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">How We Work</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#111]">Simple & Hassle Free Process</h2>
+
+                <div class="space-y-4 pt-4">
+                    <!-- Item 1 -->
+                    <div class="accordion-item active border-b border-gray-200 pb-4 cursor-pointer" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center font-bold text-lg text-[#111]">
+                            <span>01 Choose Service</span>
+                            <span class="accordion-icon transition-transform">↑</span>
+                        </div>
+                        <div class="accordion-content text-sm text-[#9B2F22] font-medium pt-2">
+                            Explore and Select from Our Wide Range of Reliable, Fast, and Professional Electronic Repair Services Built for Your Convenience.
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="accordion-item border-b border-gray-200 pb-4 cursor-pointer" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center font-bold text-lg text-[#111]">
+                            <span>02 Book Appointment</span>
+                            <span class="accordion-icon transition-transform">↓</span>
+                        </div>
+                        <div class="accordion-content text-sm text-gray-600 pt-2">
+                            Pick a date and time slot that fits your busy schedule seamlessly.
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="accordion-item border-b border-gray-200 pb-4 cursor-pointer" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center font-bold text-lg text-[#111]">
+                            <span>03 Expert Visit</span>
+                            <span class="accordion-icon transition-transform">↓</span>
+                        </div>
+                        <div class="accordion-content text-sm text-gray-600 pt-2">
+                            Our certified technician arrives equipped with diagnostics tools.
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="accordion-item border-b border-gray-200 pb-4 cursor-pointer" onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center font-bold text-lg text-[#111]">
+                            <span>04 Get It Fixed</span>
+                            <span class="accordion-icon transition-transform">↓</span>
+                        </div>
+                        <div class="accordion-content text-sm text-gray-600 pt-2">
+                            Your appliance is fixed and verified with a quality guarantee.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <img src="https://cdn.tgdd.vn/Files/2021/07/27/1371052/cac-dau-hieu-canh-bao-may-giat-sap-hu-hong-ma-ban-.png" alt="Technician diagnosing a washing machine with a multimeter" class="rounded-2xl shadow-lg w-full h-[450px] object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="py-20 px-4 sm:px-8 bg-[#F0EEE6] scroll-mt-20">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="bg-white text-[#555] text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">Join Our Team</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-4">Apply as a Technician</h2>
+                <p class="text-gray-600 text-sm mt-3">Tell us about your experience. Your profile will appear on Fixtrnc after our team reviews and approves your application.</p>
+                {% if request.args.get('application') == 'submitted' %}<p class="text-green-700 font-semibold mt-4">Application submitted for admin review.</p>{% elif request.args.get('application') == 'invalid' %}<p class="text-red-700 font-semibold mt-4">Please complete all fields with a valid phone number and use a JPG, PNG, WebP, or GIF profile photo.</p>{% endif %}
+            </div>
+            <form method="POST" enctype="multipart/form-data" action="{{ url_for('register') }}" class="bg-white rounded-2xl shadow-sm p-6 sm:p-8 grid sm:grid-cols-2 gap-5">
+                <input type="text" name="name" placeholder="Full name" required maxlength="100" class="w-full border border-gray-200 rounded-lg p-3 text-sm">
+                <input type="tel" name="phone" placeholder="Phone number" required maxlength="30" class="w-full border border-gray-200 rounded-lg p-3 text-sm">
+                <select name="category" required class="w-full border border-gray-200 rounded-lg p-3 text-sm"><option value="" disabled selected>Service category</option>{% for cat in categories %}<option value="{{ cat }}">{{ cat }}</option>{% endfor %}</select>
+                <select name="region" required class="w-full border border-gray-200 rounded-lg p-3 text-sm"><option value="" disabled selected>Service region</option>{% for reg in regions %}<option value="{{ reg }}">{{ reg }}</option>{% endfor %}</select>
+                <label class="sm:col-span-2 block text-sm font-semibold text-gray-700">Profile picture <span class="font-normal text-gray-500">(optional, JPG/PNG/WebP/GIF, up to 5 MB)</span>
+                    <input type="file" name="profile_image" accept="image/jpeg,image/png,image/webp,image/gif" class="mt-2 w-full border border-gray-200 rounded-lg p-3 text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-2 file:font-semibold">
+                </label>
+                <textarea name="description" placeholder="Experience and services you provide" rows="4" maxlength="1000" class="sm:col-span-2 w-full border border-gray-200 rounded-lg p-3 text-sm"></textarea>
+                <button type="submit" class="sm:col-span-2 bg-[#9B2F22] hover:bg-[#7A2E22] text-white rounded-lg py-3 font-bold">Submit application</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-[#1E1E1E] text-white pt-20 pb-10 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <!-- Left Contact Callout -->
+            <div class="space-y-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight uppercase leading-none">
+                    LET'S FIX YOUR<br>DEVICES
+                </h2>
+
+                <div class="grid grid-cols-2 gap-6 text-xs text-gray-400">
+                    <div class="space-y-1">
+                        <p><a href="#" class="hover:text-white">Home</a></p>
+                        <p><a href="#technicians" class="hover:text-white">Technicians</a></p>
+                        <p><a href="#about" class="hover:text-white">About Us</a></p>
+                        <p><a href="#process" class="hover:text-white">Process</a></p>
+                        <p><a href="#apply" class="hover:text-white">Apply as a Technician</a></p>
+                    </div>
+                    <div class="space-y-1">
+                        <p><a href="#" class="hover:text-white">Support</a></p>
+                        <p><a href="#" class="hover:text-white">Works</a></p>
+                        <p><a href="#" class="hover:text-white">Privacy Policy</a></p>
+                        <p><a href="#" class="hover:text-white">Terms of Service</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-center gap-4">
+                <h3 class="text-xl font-bold">Need a repair?</h3>
+                <p class="text-sm text-gray-300">Browse approved local technicians and contact them directly.</p>
+                <a href="#technician-cards" class="inline-flex w-fit rounded-lg bg-white text-[#1E1E1E] px-5 py-3 text-sm font-bold hover:bg-gray-200">Find a Technician</a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between text-xs text-gray-500 space-y-2 sm:space-y-0">
+            <p>© 2026 Fixtrnc. All Rights Reserved.</p>
+            <p>Working Hours: 9AM – 9PM</p>
+        </div>
+
+        <div class="w-full text-center mt-8 select-none opacity-20">
+            <h1 class="font-impact text-[16vw] leading-none text-white uppercase tracking-tight">FIXtrnc</h1>
+        </div>
+    </section>
+
+    <script>
+        function scrollTechnicians(direction) {
+            const carousel = document.getElementById('technician-cards');
+            const card = carousel.querySelector(':scope > .snap-start');
+            if (!card) return;
+
+            const styles = window.getComputedStyle(carousel);
+            const gap = parseFloat(styles.columnGap) || 0;
+            carousel.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+        }
+
+        function toggleAccordion(element) {
+            const items = document.querySelectorAll('.accordion-item');
+            items.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
